@@ -1,25 +1,23 @@
-<script src="~/Scripts/FunctionSubmit.js"></script>
-
 <h2>Busqueda de Vuelos Disponibles</h2>
 <div>
-  <form class="frm">
+  <form [formGroup]="fligthForm" (ngSubmit)="onSubmit()" class="frm">
       <div class="form-group">
           <div class="col s4">
-              <input type="text" id="origen" name="origen" value="Origen" />
+              <input type="text" formControlName="origen" id="origen" name="origen" value="Origen" />
               <hr />
           </div>
           <div class="col s4">
-              <input type="text" id="destino" name="destino" value="Destino" />
+              <input type="text" formControlName="destino" id="destino" name="destino" value="Destino" />
               <hr />
           </div>
           <div class="col s4">
-              <input type="date" id="fechaLlegada" name="fechaLlegada" value="FechaLlegada" />
+              <input type="date" formControlName="fechaLlegada" id="fechaLlegada" name="fechaLlegada" value="FechaLlegada" />
               <hr />
           </div>
       </div>
       <div class="form-group center">
           <div>
-              <input type="submit" value="Buscar Vuelo" />
+              <button name="Buscar Vuelo">Buscar Vuelo</button>
           </div>
       </div>
   </form>

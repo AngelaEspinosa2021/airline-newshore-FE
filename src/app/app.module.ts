@@ -8,6 +8,11 @@ import { FooterComponent } from './footer/footer.component';
 import { FligthService } from './fligth.service';
 import { AppRouterModule } from './app-router.module';
 import { HttpClientModule } from '@angular/common/http';
+import { ReactiveFormsModule } from '@angular/forms';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
+
+
 
 @NgModule({
   declarations: [
@@ -19,7 +24,9 @@ import { HttpClientModule } from '@angular/common/http';
   imports: [
     BrowserModule,
     AppRouterModule,
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule,
+    BrowserAnimationsModule
   ],
   providers: [FligthService],
   bootstrap: [AppComponent]

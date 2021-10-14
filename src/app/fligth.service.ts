@@ -1,18 +1,19 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient} from '@angular/common/http';
+import { Observable } from 'rxjs';
+import { FlightInterface } from './interfaces/FligthInterface';
 
 @Injectable({
   providedIn: 'root'
 })
 export class FligthService {
+  
+  private bdUrl = 'http://localhost:60595/Flight/Find';
 
-  bdUrl = 'http://localhost:44310/FligthService.svc';
+  constructor(private http: HttpClient) {  }
 
-  constructor(private http: HttpClient) { }
-
-  getFligths() {
-    return this.http.get(this.bdUrl);
-  }
-
-
+FindFligths(): Observable<FlightInterface[]> {
+    return this.http.get<FlightInterface[]>(this.bdUrl);
+}
+  
 }
